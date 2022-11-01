@@ -41,7 +41,6 @@ class pfc_frame():
         P_Time_6 = s.pack('!H', self.PAUSE_TIME[6])           # 16 bit
         P_Time_7 = s.pack('!H', self.PAUSE_TIME[7])           # 16 bit
         PAD_26_bytes = bytes(26)
-        # CRC = s.pack('!I', 8888)
         p = Ether(dst=self.DMAC, src=self.SMAC, type=self.Ethertype) / MC_Opcode / PD / CE_Vector/ \
             P_Time_0 / P_Time_1 / P_Time_2 / P_Time_3 / P_Time_4 / P_Time_5 / P_Time_6 / P_Time_7 / \
             PAD_26_bytes
